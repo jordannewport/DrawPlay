@@ -23,6 +23,12 @@ public class Cat {
 	private static final int EAR_SEPARATION = HEAD_DIMENSION - HEAD_DIMENSION/3;
 	private static final int EAR_HEIGHT = 30;
 	private static final int EAR_WIDTH = 30;
+	// pupils 
+	private static final int PUPIL_Y = HEAD_DIMENSION/4;
+	private static final int PUPIL_X = HEAD_DIMENSION/4;
+	private static final int PUPIL_SEPARATION = HEAD_DIMENSION/3;
+	private static final int PUPIL_HEIGHT = 8;
+	private static final int PUPIL_WIDTH = 8;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -39,8 +45,16 @@ public class Cat {
 		g2.setColor(Color.blue);
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		x += EYE_SEPARATION;
-		g2.setColor(Color.brown);
+		g2.setColor(Color.ORANGE);
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
+		// Draw the pupils
+		x = catX + PUPIL_X; 
+		y = catY + PUPIL_Y;
+		g2.setColor(Color.black);
+		g2.fillOval(x, y, PUPIL_WIDTH, PUPIL_HEIGHT);
+		x += PUPIL_SEPARATION;
+		g2.setColor(Color.black);
+		g2.fillOval(x, y, PUPIL_WIDTH, PUPIL_HEIGHT);
 		// Draw the mouth
 		g2.setColor(Color.pink);
 		x = catX + MOUTH_X;
