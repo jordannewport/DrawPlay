@@ -29,6 +29,9 @@ public class Cat {
 	private static final int PUPIL_SEPARATION = HEAD_DIMENSION/3;
 	private static final int PUPIL_HEIGHT = 8;
 	private static final int PUPIL_WIDTH = 8;
+	//sun
+	private static final int SUN_DISTANCE_X = 100;
+	private static final int SUN_DIAMETER = 100;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -71,5 +74,9 @@ public class Cat {
 		g2.fillOval(x,y,EAR_WIDTH, EAR_HEIGHT);
 		x += EAR_SEPARATION;
 		g2.fillOval(x, y, EAR_WIDTH, EAR_HEIGHT);
+		// Draw the sun
+		x += SUN_DISTANCE_X;
+		g2.setColor(Color.yellow);
+		g2.fillOval(x, y, SUN_DIAMETER, SUN_DIAMETER);
 	}
 }
