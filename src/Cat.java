@@ -32,6 +32,10 @@ public class Cat {
 	//sun
 	private static final int SUN_DISTANCE_X = 100;
 	private static final int SUN_DIAMETER = 100;
+	// cloud obscuring part of the sun
+	private static final int CLOUD_HEIGHT = 30;
+	private static final int CLOUD_WIDTH = 110;
+	private static final int CLOUD_DISTANCE = 50;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -78,5 +82,9 @@ public class Cat {
 		x += SUN_DISTANCE_X;
 		g2.setColor(Color.yellow);
 		g2.fillOval(x, y, SUN_DIAMETER, SUN_DIAMETER);
+		// Add a cloud covering the sun
+		y += CLOUD_DISTANCE;
+		g2.setColor(Color.gray);
+		g2.fillOval(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 	}
 }
